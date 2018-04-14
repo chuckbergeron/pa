@@ -1,0 +1,14 @@
+development:
+  adapter: postgresql
+  database: pa_development
+  username: chuckbergeron
+  password:
+
+test: &test
+  adapter: postgresql
+  database: pa_test
+  username: chuckbergeron
+  password:
+
+cucumber:
+  <<: *test
