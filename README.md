@@ -1,9 +1,9 @@
-# README
+=======
+# PA
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An example Rails 5.2 (API) &amp; React Physical Activity tracker app
 
-Things you may want to cover:
+
 
 * Ruby version
 
