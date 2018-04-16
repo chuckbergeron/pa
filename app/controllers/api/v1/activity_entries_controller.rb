@@ -14,7 +14,7 @@ module Api::V1
     private
 
       def activity_entry_params
-        params.require(:activity_entry).permit(:title, :body)
+        params.require(:activity_entry).permit(:activity_type_id)
       end
 
   end
