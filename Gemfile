@@ -12,6 +12,9 @@ gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 
+# Enabling Cross Origin Resource Sharing (CORS)
+gem 'rack-cors', :require => 'rack/cors'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 
