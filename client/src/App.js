@@ -1,3 +1,5 @@
+import 'bulma/css/bulma.css'
+
 import React, { Component } from 'react';
 import './App.css';
 
@@ -8,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h1>Not</h1>
+          <h1>PA, the Physical Activity Tracker</h1>
         </div>
         <ActivityEntries />
       </div>

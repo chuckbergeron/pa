@@ -11,6 +11,22 @@ module Api::V1
       render json: @activity_entry
     end
 
+    def update
+      @activity_entry = ActivityEntry.find(params[:id])
+      @activity_entry.update_attributes(activity_entry_params)
+      render json: @activity_entry
+    end
+
+    def destroy
+      @activity_entry = ActivityEntry.find(params[:id])
+
+      if @activity_entry.destroy
+        head :no_content, status: :ok
+      else
+        render json: @activity_entry.errors, status: :unprocessable_entity
+      end
+    end
+
     private
 
       def activity_entry_params
