@@ -7,21 +7,21 @@ This is an exercise in using the latest Rails API features as a standalone backe
 
 ## Running locally:
 
-Make sure you have postgres running, and have entered in proper credentials/DB names to your `config/database.yml` file.
+#### Database:
+
+PA is using Postgres. Make sure you have a postgres server running, and have entered in proper credentials/DB names to your `config/database.yml` file.
+
+Once you have created the databases and migrated them, you can run the seeds file to load some test data:
+
+`rails db:create:all && rails db:migrate && rails db:setup && rails db:seed`
+
+#### Foreman / Procfile
+
+PA has two components, a Rails API backend and a React frontend. The frontend is found in `RAILS_ROOT/client`.
 
 If you have the foreman gem installed, or with `bundle exec` run:
 
 `foreman start -f Procfile.dev`
-
-
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
 
 * How to run the test suite
 

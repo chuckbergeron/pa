@@ -4,11 +4,8 @@ development:
   username: username
   password:
 
-test: &test
+test:
   adapter: postgresql
   database: pa_test
   username: username
   password:
-
-cucumber:
-  <<: *test
