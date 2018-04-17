@@ -1,13 +1,13 @@
 development:
   adapter: postgresql
   database: pa_development
-  username: chuckbergeron
+  username: username
   password:
 
 test: &test
   adapter: postgresql
   database: pa_test
-  username: chuckbergeron
+  username: username
   password:
 
 cucumber:
