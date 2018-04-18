@@ -1,4 +1,11 @@
+import 'jsdom-global/register';
+
 import React from 'react';
+
+import {
+  BrowserRouter
+} from 'react-router-dom'
+
 import Enzyme, {
   shallow,
   mount,
@@ -6,12 +13,20 @@ import Enzyme, {
   ReactWrapper
 } from 'enzyme';
 
+
 import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
 
-import 'jsdom-global/register';
+
+
+// import { createMemoryHistory } from 'history'
+const createBrowserHistory = require('history/createBrowserHistory').default
+history = createBrowserHistory()
+
+
 
 import App from '../../src/App'
+import Dashboard from '../../src/components/dashboard'
 
 describe('basic integration tests', () => {
 
@@ -26,14 +41,25 @@ describe('basic integration tests', () => {
 
   it('should change the text on click', () => {
     const app = mount(
-      <div>
-        <App />
-      </div>
+      <App />
     );
 
-    app.find('div').simulate('click');
 
-    expect(app.find('div').prop('children')).toEqual('new text');
+    console.log(app.find('#navbar-link__history'));
+    let link = app.find('#navbar-link__history');
+
+    link.find('a').last().simulate('click')
+
+    // firing before loading dashboard / history?
+    expect(app.find('h1').prop('children')).toEqual('History of Activity');
+  });
+
+  it('should have text on dashboard', () => {
+    const dashboard = mount(
+      <Dashboard />
+    );
+
+    expect(dashboard.find('h2').prop('children')).toEqual("Add activities you've completed here:");
   });
 
 });

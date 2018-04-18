@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 
+import {
+  withRouter
+} from 'react-router-dom'
+
 export default class extends Component {
 
   render() {
@@ -8,7 +12,7 @@ export default class extends Component {
         <h1 className="title">
           Dashboard
         </h1>
-        <h2 class="subtitle">
+        <h2 className="subtitle">
           Add activities you've completed here:
         </h2>
       </div>
@@ -17,3 +21,5 @@ export default class extends Component {
 
 }
 
+
+// export default withRouter(Dashboard);

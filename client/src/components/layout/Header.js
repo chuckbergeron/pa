@@ -10,16 +10,16 @@ export default class extends Component {
         <div className="container">
           <div className="navbar-brand">
             <a className="navbar-item" href="/">
-              <h1>PA, the Physical Activity Tracker</h1>
+              PA, the Physical Activity Tracker
             </a>
 
-            <div id="navMenuDocumentation" className="navbar-menu">
+            <div className="navbar-menu">
               <div className="navbar-start">
-                <Link to='/' className="navbar-item bd-navbar-item-documentation">
+                <Link to='/' id="navbar-link__dashboard" className="navbar-item bd-navbar-item-documentation">
                   <span>Dashboard</span>
                 </Link>
 
-                <Link to='/history' className="navbar-item bd-navbar-item-documentation">
+                <Link to='/history' id="navbar-link__history" className="navbar-item bd-navbar-item-documentation">
                   <span>History</span>
                 </Link>
               </div>
