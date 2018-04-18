@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 import {
   Switch,
   Route,
-  BrowserRouter,
-  withRouter
-} from 'react-router-dom'
+  BrowserRouter
+} from 'react-router-dom';
 
-import 'bulma/css/bulma.css'
+// 3rd Party CSS
+import 'bulma/css/bulma.css';
+import 'izitoast/dist/css/iziToast.css'
+
 
 import './App.css';
 
-import ActivityEntries from './components/activities'
-import Dashboard from './components/dashboard'
-import Header from './components/layout/Header'
+import ActivityEntries from '@/javascripts/components/activities';
+import Dashboard from '@/javascripts/components/dashboard';
+import Header from '@/javascripts/components/layout/Header';
 
 export default class extends Component {
   render() {

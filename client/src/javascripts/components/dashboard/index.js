@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 
-import {
-  withRouter
-} from 'react-router-dom'
-
 export default class extends Component {
 
   render() {
@@ -21,5 +17,3 @@ export default class extends Component {
 
 }
 
-
-// export default withRouter(Dashboard);

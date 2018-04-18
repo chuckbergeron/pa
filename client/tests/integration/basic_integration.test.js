@@ -25,8 +25,8 @@ history = createBrowserHistory()
 
 
 
-import App from '../../src/App'
-import Dashboard from '../../src/components/dashboard'
+import App from '@/App'
+import Dashboard from '@/javascripts/components/dashboard'
 
 describe('basic integration tests', () => {
 

@@ -5,14 +5,15 @@ import ImmutableUpdate from 'immutability-helper'
 import ActivityEntryForm from './ActivityEntryForm'
 import ActivityEntry from './ActivityEntry'
 
+import * as toast from 'izitoast/dist/js/iziToast';
+
 export default class extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
       activityEntries: [],
-      editingActivityEntryId: null,
-      notification: ''
+      editingActivityEntryId: null
     }
   }
 
@@ -22,7 +23,14 @@ export default class extends Component {
         console.log(response)
         this.setState({ activityEntries: response.data })
       })
-      .catch(error => console.log(error))
+      .catch(error => {
+        toast.error({
+            title: 'Error',
+            message: 'Could not load activities (is the server connected?)',
+            position: 'topRight'
+        });
+        console.log(error)
+      })
   }
 
   addNewActivityEntry = () => {
@@ -54,13 +62,14 @@ export default class extends Component {
       [activityEntryIndex]: { $set: activityEntry }
     })
     this.setState({
-      activityEntries: activityEntries,
-      notification: 'All changes saved'
+      activityEntries: activityEntries
     })
-  }
 
-  resetNotification = () => {
-    this.setState({ notification: '' })
+    toast.success({
+      title: 'Success!',
+      message: 'All changed have been saved.',
+      position: 'topRight'
+    });
   }
 
   enableEditing = (id) => {
@@ -95,16 +104,11 @@ export default class extends Component {
           New Activity
         </button>
 
-        <span className="notification">
-          {this.state.notification}
-        </span>
-
         {this.state.activityEntries.map((activityEntry) => {
 
           if(this.state.editingActivityEntryId === activityEntry.id) {
             return(<ActivityEntryForm activityEntry={activityEntry}
               key={activityEntry.id} updateActivityEntry={this.updateActivityEntry}
-              resetNotification={this.resetNotification}
               activityTypeIdRef={input => this.activity_type_id = input} />)
           } else {
             return (<ActivityEntry activityEntry={activityEntry} key={activityEntry.id}

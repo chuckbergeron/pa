@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-require('../../stylesheets/Header.css')
+require('@/stylesheets/Header.css')
 
 export default class extends Component {
   render () {
