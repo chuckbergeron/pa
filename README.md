@@ -23,10 +23,47 @@ If you have the foreman gem installed, or with `bundle exec` run:
 
 `foreman start -f Procfile.dev`
 
-* How to run the test suite
+#### Tests
+
+Once you've configured the database properly, you can run the rspec unit testing suite simply with:
+
+`rspec`
+
+In the React `client` directory, you can run the tests with:
+
+`jest`
+
+
+<!--
 
 * Services (job queues, cache servers, search engines, etc.)
-
 * Deployment instructions
 
-* ...
+
+Rspec / JS unit/integration Tests
+Clean up config stuff (integration testing, other files import / require mess at top)
+General table layout (better activity entries)
+Authentication
+Emails
+Jobs
+File Upload/IMG
+Config settings for iziToast
+
+
+Faker ? seeds...
+READMEs both for Rails app and Client app
+SPA / Router
+DB validations (fk constraints)
+app/src
+  - images
+  - stylesheets
+  - javascripts
+Semicolon consistency
+Model Validations
+
+
+use @ for pathing
+Type system/TypeScript
+Deploy? (build JS part)
+Loadable
+ -->
