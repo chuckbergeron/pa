@@ -40,7 +40,6 @@ In the React `client` directory, you can run the tests with:
 * Deployment instructions
 
 
-Rspec / JS unit/integration Tests
 Clean up config stuff (integration testing, other files import / require mess at top)
 General table layout (better activity entries)
 Authentication
@@ -50,6 +49,8 @@ File Upload/IMG
 Config settings for iziToast
 
 
+
+Rspec / JS unit/integration Tests
 Faker ? seeds...
 READMEs both for Rails app and Client app
 SPA / Router

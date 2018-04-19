@@ -28,6 +28,9 @@ history = createBrowserHistory()
 import App from '@/App'
 import Dashboard from '@/javascripts/components/dashboard'
 
+
+// beforeEach(cusstomConfig)
+
 describe('basic integration tests', () => {
 
   // let router;
